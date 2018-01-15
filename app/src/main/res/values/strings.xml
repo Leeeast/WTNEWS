@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">无他头条</string>
+
+    <string name="response_code_other">未知错误</string>
+    <string name="response_code_10001">服务器异常</string>
+    <string name="response_code_20002">对不起,您无权使用该服务</string>
+    <string name="tip_file_path_unexists">文件不存在，请修重新选择图片</string>
+
+
+    <string name="splash_right_declare">All  Rights  reserved  SINASHOW</string>
+    <string name="splash_txt">懂她的 才是真我</string>
+
+    <string name="tab_main">首页</string>
+    <string name="tab_topic">圈子</string>
+    <string name="tab_mine">我的</string>
+    <string name="tab_unlogin">未登录</string>
+</resources>
