@@ -14,4 +14,17 @@
     <string name="tab_topic">圈子</string>
     <string name="tab_mine">我的</string>
     <string name="tab_unlogin">未登录</string>
+
+    <string name="exit_app_tips">再按一次退出</string>
+
+    <string name="mine_login_tip">点击登陆</string>
+    <string name="mine_login_des">（登陆体验更贴心呦）</string>
+    <string name="mine_collect">收藏</string>
+    <string name="mine_record">足迹</string>
+    <string name="mine_tiezi">贴子</string>
+    <string name="mine_item_msg">我的消息</string>
+    <string name="mine_item_follow">我的关注</string>
+    <string name="mine_item_activity">活动中心</string>
+    <string name="mine_item_opinion">意见反馈</string>
+    <string name="mine_item_setting">系统设置</string>
 </resources>

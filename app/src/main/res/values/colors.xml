@@ -13,5 +13,7 @@
     <color name="main_tab_bg">#fffefefe</color>
     <color name="main_tab_txt_p">#FFFE6578</color>
     <color name="main_tab_txt_n">#FF333333</color>
+    <color name="mine_line">#FF979797</color>
+    <color name="app_common_bg">#FFF5F5F5</color>
 
 </resources>

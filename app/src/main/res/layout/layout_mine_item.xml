@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/DIMEN_70PX"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="@dimen/DIMEN_23PX"
+        android:layout_height="@dimen/DIMEN_23PX"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/DIMEN_17PX"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/DIMEN_17PX"
+        android:layout_toRightOf="@id/iv_icon"
+        android:text="@string/mine_item_msg"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:layout_width="@dimen/DIMEN_7PX"
+        android:layout_height="@dimen/DIMEN_13PX"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/DIMEN_15PX"
+        android:src="@mipmap/arrow_right_gray" />
+
+    <View
+        android:id="@+id/item_line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/DIMEN_49PX"
+        android:background="@color/mine_line" />
+
+</RelativeLayout>

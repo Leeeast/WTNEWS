@@ -7,28 +7,26 @@ import com.gyf.barlibrary.ImmersionBar;
 import com.sinashow.news.presenter.BasePresenter;
 import com.sinashow.news.view.base.BaseView;
 
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
+
 public abstract class BaseActivity<V, T extends BasePresenter<V>> extends BaseAppCompatActivity implements BaseView {
     //表示层引用
     public T presenter;
+    private Unbinder mUnbinder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         presenter = createPresenter();
-
         if (presenter != null) {
             this.presenter.attachView((V) this);
         } else {
             throw new IllegalArgumentException("You must create a own presenter!!!");
         }
-
+        mUnbinder = ButterKnife.bind(this);
         fetch();
         setSystemStatusBar();
-    }
-
-    @Override
-    public void setContentView(int layoutResID) {
-        super.setContentView(layoutResID);
     }
 
     @Override
@@ -44,7 +42,12 @@ public abstract class BaseActivity<V, T extends BasePresenter<V>> extends BaseAp
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        presenter.detachView();
+        if (presenter != null) {
+            presenter.detachView();
+        }
+        if (mUnbinder != null) {
+            mUnbinder.unbind();
+        }
     }
 
     protected abstract T createPresenter();

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:mine_item="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/app_common_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/DIMEN_170PX"
+            android:background="@mipmap/mine_bg">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="@dimen/DIMEN_20PX">
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/sdv_avatar"
+                    android:layout_width="@dimen/DIMEN_88PX"
+                    android:layout_height="@dimen/DIMEN_88PX"
+                    android:layout_marginLeft="@dimen/DIMEN_20PX"
+                    fresco:actualImageScaleType="focusCrop"
+                    fresco:failureImage="@mipmap/avatar_default"
+                    fresco:failureImageScaleType="fitCenter"
+                    fresco:placeholderImage="@mipmap/avatar_default"
+                    fresco:placeholderImageScaleType="fitCenter"
+                    fresco:roundAsCircle="true" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="14dp"
+                    android:layout_toRightOf="@id/sdv_avatar"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_user_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mine_login_tip"
+                        android:textColor="@color/white"
+                        android:textSize="21sp" />
+
+                    <TextView
+                        android:id="@+id/tv_login_des"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mine_login_des"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="@dimen/DIMEN_22PX"
+                    android:layout_height="@dimen/DIMEN_22PX"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/DIMEN_20PX"
+                    android:background="@mipmap/arrow_right_white" />
+            </RelativeLayout>
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/DIMEN_75PX"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/lly_collect"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.0"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/DIMEN_25PX"
+                    android:layout_height="@dimen/DIMEN_25PX"
+                    android:background="@mipmap/icon_collect" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/DIMEN_12PX"
+                    android:includeFontPadding="false"
+                    android:text="@string/mine_collect"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lly_record"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.0"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/DIMEN_25PX"
+                    android:layout_height="@dimen/DIMEN_25PX"
+                    android:background="@mipmap/icon_record" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/DIMEN_12PX"
+                    android:includeFontPadding="false"
+                    android:text="@string/mine_record"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lly_tiezi"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.0"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/DIMEN_25PX"
+                    android:layout_height="@dimen/DIMEN_25PX"
+                    android:background="@mipmap/icon_tiezi" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/DIMEN_12PX"
+                    android:includeFontPadding="false"
+                    android:text="@string/mine_tiezi"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <com.sinashow.news.widget.MineItem
+            android:id="@+id/item_msg"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/DIMEN_70PX"
+            mine_item:item_icon="@mipmap/icon_mine_msg"
+            mine_item:item_show_line="true"
+            mine_item:item_title="@string/mine_item_msg" />
+
+        <com.sinashow.news.widget.MineItem
+            android:id="@+id/item_follow"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/DIMEN_70PX"
+            mine_item:item_icon="@mipmap/icon_mine_follow"
+            mine_item:item_show_line="true"
+            mine_item:item_title="@string/mine_item_follow" />
+
+        <com.sinashow.news.widget.MineItem
+            android:id="@+id/item_activity"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/DIMEN_70PX"
+            mine_item:item_icon="@mipmap/icon_mine_activity"
+            mine_item:item_show_line="false"
+            mine_item:item_title="@string/mine_item_activity" />
+
+        <com.sinashow.news.widget.MineItem
+            android:id="@+id/item_opinion"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/DIMEN_70PX"
+            android:layout_marginTop="@dimen/DIMEN_5PX"
+            mine_item:item_icon="@mipmap/icon_mine_opinion"
+            mine_item:item_show_line="true"
+            mine_item:item_title="@string/mine_item_opinion" />
+
+        <com.sinashow.news.widget.MineItem
+            android:id="@+id/item_setting"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/DIMEN_70PX"
+            mine_item:item_icon="@mipmap/icon_mine_setting"
+            mine_item:item_show_line="false"
+            mine_item:item_title="@string/mine_item_setting" />
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>
