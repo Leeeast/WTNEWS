@@ -84,7 +84,7 @@ public abstract class BaseActivity<V, T extends BasePresenter<V>> extends BaseAp
      */
     public void setSystemStatusBar() {
         ImmersionBar.with(this)
-                .statusBarDarkFont(true, 0.2f)
+                .statusBarDarkFont(true, 0)
                 .init();
     }
 }

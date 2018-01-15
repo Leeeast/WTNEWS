@@ -14,9 +14,7 @@ public class JumpCode {
     // 请求码,往下加1
     public static final int FLAG_REQ_JUMP_MAIN = FLAG_REQ + 1;
 
-
     // 返回码,往下加1
     public static final int FLAG_RES_EXIT_APP = FLAG_RES_RETURN + 1;
-
 
 }

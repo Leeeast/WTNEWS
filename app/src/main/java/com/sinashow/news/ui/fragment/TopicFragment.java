@@ -39,7 +39,7 @@ public class TopicFragment extends BaseFragment {
     }
 
     @Override
-    protected void initViewsAndEvents() {
+    protected void initViewsAndEvents(View rootView) {
 
     }
 

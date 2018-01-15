@@ -26,4 +26,5 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:2.2.2'
     implementation project(':library')
     compile project(path: ':barlibrary')
+    implementation project(':magicindicator')
 }

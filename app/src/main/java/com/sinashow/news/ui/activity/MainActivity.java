@@ -19,6 +19,7 @@ import com.sinashow.news.ui.base.BaseActivity;
 import com.sinashow.news.ui.fragment.MainFragment;
 import com.sinashow.news.ui.fragment.MineFragment;
 import com.sinashow.news.ui.fragment.TopicFragment;
+import com.sinashow.news.view.MainContentView;
 import com.sinashow.news.view.MainView;
 
 public class MainActivity extends BaseActivity<MainView, MainPresenterImpl<MainView>> implements MainView, RadioGroup.OnCheckedChangeListener {
@@ -56,6 +57,7 @@ public class MainActivity extends BaseActivity<MainView, MainPresenterImpl<MainV
     @Override
     protected void initViewsAndEvents() {
         fragmentManager = getSupportFragmentManager();
+        showFragment(MainFragment.FRAGMENT_TAG);
 
         mRdobtnMine = findViewById(R.id.rdobtn_mine);
         rdogpMainTab = findViewById(R.id.rdogp_main_tab);

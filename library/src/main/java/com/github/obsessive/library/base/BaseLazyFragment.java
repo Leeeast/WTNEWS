@@ -112,7 +112,7 @@ public abstract class BaseLazyFragment extends Fragment {
         mScreenHeight = displayMetrics.heightPixels;
         mScreenWidth = displayMetrics.widthPixels;
 
-        initViewsAndEvents();
+        initViewsAndEvents(view);
     }
 
     @Override
@@ -229,7 +229,7 @@ public abstract class BaseLazyFragment extends Fragment {
     /**
      * init all views and add events
      */
-    protected abstract void initViewsAndEvents();
+    protected abstract void initViewsAndEvents(View rootView);
 
     /**
      * bind layout resource file

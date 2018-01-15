@@ -152,6 +152,7 @@
         </LinearLayout>
 
         <com.sinashow.news.widget.MineItem
+            android:layout_marginTop="@dimen/DIMEN_5PX"
             android:id="@+id/item_msg"
             android:layout_width="match_parent"
             android:layout_height="@dimen/DIMEN_70PX"

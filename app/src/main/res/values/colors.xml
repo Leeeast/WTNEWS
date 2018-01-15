@@ -11,9 +11,13 @@
     <color name="app_bg_white">#FFFFFFFF</color>
     <color name="common_line">#FFFFDFD8</color>
     <color name="main_tab_bg">#fffefefe</color>
-    <color name="main_tab_txt_p">#FFFE6578</color>
+    <color name="main_tab_txt_p">#FFFF769C</color>
     <color name="main_tab_txt_n">#FF333333</color>
     <color name="mine_line">#FF979797</color>
     <color name="app_common_bg">#FFF5F5F5</color>
+    <color name="main_title">#FFFF2A00</color>
+
+    <color name="main_tab_default">#FFB0B0B0</color>
+    <color name="main_tab_clip">#FFFF0000</color>
 
 </resources>

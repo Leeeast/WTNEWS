@@ -30,7 +30,7 @@ public class RequestUtil {
      * 普通回调
      */
     public interface RequestListener {
-        void onSuccess(boolean isSuccess, String obj, int code, int id);
+        void onSuccess(boolean isSuccess, String obj, int id);
 
         void onFailed(Call call, Exception e, int id);
     }
@@ -62,54 +62,6 @@ public class RequestUtil {
     }
 
     /**
-     * 请求统一封装
-     *
-     * @param url       请求连接
-     * @param params    参数
-     * @param requestId 请求ID
-     * @param listener  请求回调
-     */
-    public static RequestCall request(String url, Map<String, String> params, int requestId, final RequestListener listener) {
-        RequestCall build = OkHttpUtils
-                .get()
-                .url(url)
-                .params(params)
-                .id(requestId)
-                .build();
-        build.execute(new StringCallback() {
-            @Override
-            public void onError(Call call, Exception e, int id) {
-                LogUtil.e(TAG, e.getMessage() + "-" + id);
-                listener.onFailed(call, e, id);
-            }
-
-            @Override
-            public void onResponse(String response, int id) {
-                LogUtil.i(TAG, response + ":id = " + id);
-                if (!TextUtils.isEmpty(response)) {
-                    try {
-                        JSONObject jsonObject = new JSONObject(response);
-                        int code = jsonObject.optInt("code");
-                        String msg = jsonObject.optString("message");
-                        String data = jsonObject.optString("data");
-                        int totalCount = jsonObject.optInt("totalCount");
-                        if (ResponseCodeCheck.checkResponseCode(code)) {
-                            listener.onSuccess(true, data, code, totalCount);
-                        } else {
-                            listener.onSuccess(false, msg, code, totalCount);
-                        }
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                        listener.onSuccess(false, "Json data parsing exception", 0, id);
-                    }
-                }
-            }
-        });
-        return build;
-    }
-
-
-    /**
      * post请求封装
      *
      * @param url       请求连接
@@ -135,22 +87,9 @@ public class RequestUtil {
                 @Override
                 public void onResponse(String response, int id) {
                     if (!TextUtils.isEmpty(response)) {
-                        try {
-                            JSONObject jsonObject = new JSONObject(response);
-                            int code = jsonObject.optInt("code");
-                            String msg = jsonObject.optString("message");
-                            String data = jsonObject.optString("data");
-                            if (ResponseCodeCheck.checkResponseCode(code)) {
-                                listener.onSuccess(true, data, code, id);
-                            } else {
-                                listener.onSuccess(false, msg, code, id);
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                            listener.onSuccess(false, "Json data parsing exception", 0, id);
-                        }
+                        listener.onSuccess(true, response, id);
                     } else {
-
+                        listener.onSuccess(false, response, id);
                     }
                 }
             });
@@ -189,20 +128,9 @@ public class RequestUtil {
                 public void onResponse(String response, int id) {
                     LogUtil.i(TAG, response + ":id = " + id);
                     if (!TextUtils.isEmpty(response)) {
-                        try {
-                            JSONObject jsonObject = new JSONObject(response);
-                            int code = jsonObject.optInt("code");
-                            String msg = jsonObject.optString("message");
-                            String data = jsonObject.optString("data");
-                            if (ResponseCodeCheck.checkResponseCode(code)) {
-                                listener.onSuccess(true, data, code, id);
-                            } else {
-                                listener.onSuccess(false, msg, code, id);
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                            listener.onSuccess(false, "Json data parsing exception", 0, id);
-                        }
+                        listener.onSuccess(true, response, id);
+                    } else {
+                        listener.onSuccess(false, response, id);
                     }
                 }
             });
@@ -213,85 +141,6 @@ public class RequestUtil {
         }
         return null;
     }
-
-
-    /**
-     * 请求统一封装
-     *
-     * @param isPost    是否是post请求
-     * @param url       请求连接
-     * @param params    参数
-     * @param requestId 请求ID
-     * @param listener  请求回调
-     */
-    public static RequestCall requestList(boolean isPost, String url, Map<String, String> params, int requestId, RequestListListener listener) {
-        if (isPost) {
-            return postRequestList(url, params, requestId, listener);
-        } else {
-            return getRequestList(url, params, requestId, listener);
-        }
-    }
-
-    /**
-     * post请求封装
-     *
-     * @param url       请求连接
-     * @param params    参数
-     * @param requestId 请求ID
-     * @param listener  请求回调
-     */
-    public static RequestCall postRequestList(String url, Map<String, String> params, int requestId, final RequestListListener listener) {
-        RequestCall build = OkHttpUtils
-                .post()
-                .url(url)
-                .params(params)
-                .id(requestId)
-                .build();
-        build.execute(new StringCallback() {
-            @Override
-            public void onError(Call call, Exception e, int id) {
-                listener.onFailed(call, e, id);
-            }
-
-            @Override
-            public void onResponse(String response, int id) {
-                listener.onSuccess(response, id);
-            }
-        });
-        return build;
-    }
-
-    /**
-     * get请求封装
-     *
-     * @param url       请求连接
-     * @param params    参数
-     * @param requestId 请求ID
-     * @param listener  请求回调
-     */
-    public static RequestCall getRequestList(String url, Map<String, String> params, final int requestId, final RequestListListener listener) {
-        RequestCall build = OkHttpUtils
-                .get()
-                .url(url)
-                .params(params)
-                .id(requestId)
-                .build();
-        build.execute(new StringCallback() {
-            @Override
-            public void onError(Call call, Exception e, int id) {
-                LogUtil.e(TAG, e.getMessage() + "-" + id);
-                listener.onFailed(call, e, id);
-            }
-
-            @Override
-            public void onResponse(String response, int id) {
-                LogUtil.i(TAG, response + ":id = " + id);
-                listener.onSuccess(response, id);
-            }
-        });
-        return build;
-    }
-
 
     public static RequestCall uploadLoadFile(String url, String filePath, final RequestListener listener) {
         try {
@@ -321,13 +170,13 @@ public class RequestUtil {
                             String msg = jsonObject.optString("message");
                             String data = jsonObject.optString("data");
                             if (ResponseCodeCheck.checkResponseCode(code)) {
-                                listener.onSuccess(true, data, code, id);
+                                listener.onSuccess(true, data, id);
                             } else {
-                                listener.onSuccess(false, msg, code, id);
+                                listener.onSuccess(false, msg, id);
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
-                            listener.onSuccess(false, "Json data parsing exception", 0, id);
+                            listener.onSuccess(false, "Json data parsing exception", id);
                         }
                     } else {
 
