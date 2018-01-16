@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lly_main_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="false"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/login_bg" />
+
+
+    <TextView
+        android:id="@+id/tv_protocol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/DIMEN_38PX"
+        android:includeFontPadding="false"
+        android:text="@string/login_protocol"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tv_login_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/tv_protocol"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/DIMEN_28PX"
+        android:includeFontPadding="false"
+        android:text="@string/login_phone"
+        android:textColor="@color/logion_phone"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:id="@+id/lly_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/tv_login_phone"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/DIMEN_20PX"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/lly_login_wx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/DIMEN_37PX"
+                android:layout_height="@dimen/DIMEN_37PX"
+                android:layout_gravity="center_horizontal"
+                android:scaleType="centerInside"
+                android:src="@mipmap/login_wx" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/DIMEN_5PX"
+                android:includeFontPadding="false"
+                android:text="@string/login_wx"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lly_login_qq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/DIMEN_48PX"
+            android:layout_marginRight="@dimen/DIMEN_48PX"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/DIMEN_37PX"
+                android:layout_height="@dimen/DIMEN_37PX"
+                android:layout_gravity="center_horizontal"
+                android:scaleType="centerInside"
+                android:src="@mipmap/login_qq" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/DIMEN_5PX"
+                android:includeFontPadding="false"
+                android:text="@string/login_qq"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lly_login_guest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/DIMEN_37PX"
+                android:layout_height="@dimen/DIMEN_37PX"
+                android:layout_gravity="center_horizontal"
+                android:scaleType="centerInside"
+                android:src="@mipmap/login_guest" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/DIMEN_5PX"
+                android:includeFontPadding="false"
+                android:text="@string/login_guest"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/lly_login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/DIMEN_160PX"
+        android:includeFontPadding="false"
+        android:text="@string/splash_right_declare"
+        android:textColor="@color/white"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/tv_login_des"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/tv_right"
+        android:layout_centerHorizontal="true"
+        android:includeFontPadding="false"
+        android:text="@string/splash_txt"
+        android:textColor="@color/white"
+        android:textSize="12sp" />
+
+    <ImageView
+        android:layout_width="@dimen/DIMEN_66PX"
+        android:layout_height="@dimen/DIMEN_66PX"
+        android:layout_above="@id/tv_login_des"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/DIMEN_20PX"
+        android:background="@mipmap/ic_launcher" />
+
+</RelativeLayout>
+

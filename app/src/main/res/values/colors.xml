@@ -20,4 +20,6 @@
     <color name="main_tab_default">#FFB0B0B0</color>
     <color name="main_tab_clip">#FFFF0000</color>
 
+    <color name="logion_phone"></color>
+
 </resources>
